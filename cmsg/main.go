@@ -70,7 +70,7 @@ func runPush() {
     title := commits[0].Subject
 
     fmt.Println("Creating PR...")
-    prCmd := exec.Command("gh", "pr", "create", "--title", title, "--body", description)
+    prCmd := exec.Command("gh", "pr", "create", "--draft", "--title", title, "--body", description)
     prCmd.Stdout = os.Stdout
     prCmd.Stderr = os.Stderr
     if err := prCmd.Run(); err != nil {
